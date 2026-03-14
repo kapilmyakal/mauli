@@ -9,7 +9,7 @@ const SocialButtons: React.FC = () => {
   const socialLinks = [
     {
       name: "whatsapp",
-      url: `https://wa.me/+919579068131?text=${encoded}`,
+      url: `https://wa.me/+919665655595?text=${encoded}`,
       icon: "fab fa-whatsapp",
       color: "#25D366",
     },
@@ -28,7 +28,7 @@ const SocialButtons: React.FC = () => {
     },
     {
         name: "call",
-        url: "tel:+919579068131", // <-- opens dialer
+        url: "tel:+919665655595", // <-- opens dialer
         icon: "fas fa-phone-alt",
         color: "#34B7F1", // Blue color for call button
       },

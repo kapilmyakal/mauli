@@ -1,6 +1,6 @@
 import { CartItem } from '../components/Cart';
 
-const WHATSAPP_NUMBER = '919579068131';
+const WHATSAPP_NUMBER = '919665655595';
 
 export function sendOrderToWhatsApp(items: CartItem[]) {
   const orderDetails = items.map((item, index) =>

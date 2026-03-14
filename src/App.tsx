@@ -26,8 +26,17 @@ import A11 from './img/A11.jpeg';
 import A12 from './img/A12.jpeg';
 import A13 from './img/A13.jpeg';
 import A14 from './img/A14.jpeg';
-import A15 from './img/'
+import A15 from './img/A15.jpeg';
+import A16 from './img/A16.jpeg';
+import A17 from './img/A17.jpeg';
+import A18 from './img/A18.jpeg';
+import A19 from './img/A19.jpeg';
+import A20 from './img/A20.jpeg';
+import A21 from './img/A21.jpeg';
 import A22 from './img/A22.jpeg';
+import A23 from './img/A23.jpeg';
+import A24 from './img/A24.jpeg';
+import A25 from './img/A25.jpeg';
 import A26 from './img/A26.jpeg';
 import A27 from './img/A27.jpeg';
 import A28 from './img/A28.jpeg';
@@ -62,24 +71,34 @@ function App() {
   async function fetchProducts() {
     try {
       const data = [
-        { id: 'a1', name: 'A1', price: 40, image_url: A1, description: 'Napkin Quantity: 1 | Size: 10″ × 10″', stock: 100 },
-        { id: 'a2', name: 'A2', price: 50, image_url: A2, description: 'Napkin Quantity: 1 | Size: 12″ × 12″', stock: 100 },
-        { id: 'a3', name: 'A3', price: 50, image_url: A3, description: 'Napkin Quantity: 1 | Size: 12″ × 12″', stock: 50 },
-        { id: 'a4', name: 'A4', price: 100, image_url: A4, description: 'Napkin Quantity: 2 | Size: 12″ × 12″', stock: 100 },
-        { id: 'a5', name: 'A5', price: 100, image_url: A5, description: 'Napkin Quantity: 2 | Size: 12″ × 12″', stock: 100 },
-        { id: 'a6', name: 'A6', price: 150, image_url: A6, description: 'Napkin Quantity: 3 | Size: 12″ × 12″', stock: 100 },
-        { id: 'a7', name: 'A7', price: 160, image_url: A7, description: 'Napkin Quantity: 5 | Size: 10″ × 10″', stock: 100 },
-        { id: 'a8', name: 'A8', price: 220, image_url: A8, description: 'Napkin Quantity: 5 | Size: 12″ × 12″', stock: 100 },
-        { id: 'a9', name: 'A9', price: 300, image_url: A9, description: 'Napkin Quantity: 5 | Size: 12″ × 12″', stock: 100 },
-        { id: 'a10', name: 'A10', price: 400, image_url: A10, description: 'Napkin Quantity: 10 | Size: 12″ × 12″', stock: 100 },
-        { id: 'A11', name: 'A11', price: 360, image_url: A11, description: 'Napkin Quantity: 5 | Size: 12″ × 12″', stock: 100 },
-        { id: 'A12', name: 'A12', price: 380, image_url: A12, description: 'Napkin Quantity: 6 | Size: 12″ × 12″', stock: 100 },
-        { id: 'A13', name: 'A13', price: 420, image_url: A13, description: 'Napkin Quantity: 5 | Size: 12″ × 12″', stock: 100 },
-        { id: 'A13', name: 'A14', price: 420, image_url: A14, description: 'Napkin Quantity: 8 | Size: 12″ × 12″', stock: 100 },
-        { id: 'A22', name: 'A22', price: 250, image_url: A22, description: 'Napkin Quantity: 7 | Size: 10″ × 10″', stock: 100 },
-        { id: 'A26', name: 'A26', price: 270, image_url: A26, description: 'Napkin Quantity: 4 | Size: 12″ × 12″', stock: 100 },
-        { id: 'A27', name: 'A27', price: 200, image_url: A27, description: 'Napkin Quantity: 4 | Size: 10″ × 10″', stock: 100 },
-        { id: 'A28', name: 'A28', price: 400, image_url: A28, description: 'Napkin Quantity: 9 | Size: 10″ × 10″', stock: 100 },
+        { id: 'a1', name: 'A1', price: 40, image_url: A1, description: 'Napkin Quantity: 1 | Size: 10″ × 10″', stock: 1000 },
+        { id: 'a2', name: 'A2', price: 50, image_url: A2, description: 'Napkin Quantity: 1 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'a3', name: 'A3', price: 50, image_url: A3, description: 'Napkin Quantity: 1 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'a4', name: 'A4', price: 100, image_url: A4, description: 'Napkin Quantity: 2 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'a5', name: 'A5', price: 100, image_url: A5, description: 'Napkin Quantity: 2 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'a6', name: 'A6', price: 150, image_url: A6, description: 'Napkin Quantity: 3 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'a7', name: 'A7', price: 160, image_url: A7, description: 'Napkin Quantity: 5 | Size: 10″ × 10″', stock: 1000 },
+        { id: 'a8', name: 'A8', price: 220, image_url: A8, description: 'Napkin Quantity: 5 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'a9', name: 'A9', price: 300, image_url: A9, description: 'Napkin Quantity: 5 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'a10', name: 'A10', price: 400, image_url: A10, description: 'Napkin Quantity: 10 | Size: 10″ × 10″', stock: 1000 },
+        { id: 'A11', name: 'A11', price: 360, image_url: A11, description: 'Napkin Quantity: 5 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'A12', name: 'A12', price: 380, image_url: A12, description: 'Napkin Quantity: 6 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'A13', name: 'A13', price: 420, image_url: A13, description: 'Napkin Quantity: 5 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'A14', name: 'A14', price: 420, image_url: A14, description: 'Napkin Quantity: 8 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'A15', name: 'A15', price: 650, image_url: A15, description: 'Towel: 1 | Size 30″ × 60″ & Napkin Quantity: 4 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'A16', name: 'A16', price: 650, image_url: A16, description: 'Napkin Quantity: 10 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'A17', name: 'A17', price: 600, image_url: A17, description: 'Towel: 1 | Size 30″ × 60″ & Napkin Quantity: 1 | Size: 12″ × 18″', stock: 1000 },
+        { id: 'A18', name: 'A18', price: 130, image_url: A18, description: 'White Napkin Quantity: 2 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'A19', name: 'A19', price: 140, image_url: A19, description: 'Napkin Quantity: 3 | Size: 10″ × 10″', stock: 1000 },
+        { id: 'A20', name: 'A20', price: 130, image_url: A20, description: 'Napkin Quantity: 2 | Size: 12″ × 18″', stock: 1000 },
+        { id: 'A21', name: 'A21', price: 1400, image_url: A21, description: 'Towel: 2 | Size 30″ × 60″ & Napkin Quantity: 7 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'A22', name: 'A22', price: 250, image_url: A22, description: 'Napkin Quantity: 7 | Size: 10″ × 10″', stock: 1000 },
+        { id: 'A23', name: 'A23', price: 150, image_url: A23, description: 'Napkin Quantity: 4 | Size: 10″ × 10″', stock: 1000 },
+        { id: 'A24', name: 'A24', price: 370, image_url: A24, description: 'Napkin Quantity: 6 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'A25', name: 'A25', price: 150, image_url: A25, description: 'Napkin Quantity: 3 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'A26', name: 'A26', price: 270, image_url: A26, description: 'Napkin Quantity: 4 | Size: 12″ × 12″', stock: 1000 },
+        { id: 'A27', name: 'A27', price: 200, image_url: A27, description: 'Napkin Quantity: 4 | Size: 10″ × 10″', stock: 1000 },
+        { id: 'A28', name: 'A28', price: 400, image_url: A28, description: 'Napkin Quantity: 9 | Size: 10″ × 10″', stock: 1000 },
 
       ];
       setProducts(data);
@@ -104,17 +123,19 @@ function App() {
     });
   }
 
-  function updateQuantity(productId: string, quantity: number) {
-    setCartItems((prev) =>
-      quantity <= 0
-        ? prev.filter((i) => i.product.id !== productId)
-        : prev.map((i) =>
-            i.product.id === productId
-              ? { ...i, quantity: Math.min(quantity, i.product.stock) }
-              : i
-          )
-    );
-  }
+function updateQuantity(productId: string, quantity: number) {
+  if (isNaN(quantity)) return;
+
+  setCartItems((prev) =>
+    quantity <= 0
+      ? prev.filter((i) => i.product.id !== productId)
+      : prev.map((i) =>
+          i.product.id === productId
+            ? { ...i, quantity: Math.min(quantity, i.product.stock) }
+            : i
+        )
+  );
+}
 
   function handleCheckout() {
     if (cartItems.length > 0) {
@@ -158,9 +179,9 @@ function App() {
       </header>
 
       {/* Hero / Carousel */}
-      <section className="py-10 sm:py-14">
+      {/* <section className="py-10 sm:py-14">
         {products.length > 0 && <ProductCarousel products={products} onAddToCart={addToCart} />}
-      </section>
+      </section> */}
 
       {/* Product List */}
       <ProductList products={products} onAddToCart={addToCart} />

@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 const FloatingWhatsApp: React.FC = () => {
   const message = `Hi Mauli Mart, I'm interested in products. Please share more details.`;
   const encoded = encodeURIComponent(message);
-  const url = `https://wa.me/+919579068131?text=${encoded}`;
+  const url = `https://wa.me/+919665655595?text=${encoded}`;
 
   const handleClick = () => {
     window.open(url, "_blank");
