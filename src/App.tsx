@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { ShoppingCart } from 'lucide-react';
-import { supabase, Product } from './lib/supabase';
+import { Product } from './lib/supabase';
 import HorizontalImageList from './components/HorizontalImageList';
 import Logo from './components/Logo';
-import ProductCarousel from './components/ProductCarousel';
+// import ProductCarousel from './components/ProductCarousel';
 import ProductList from './components/ProductList';
 import Cart, { CartItem } from './components/Cart';
 import { sendOrderToWhatsApp } from './utils/whatsapp';
@@ -48,13 +48,18 @@ import moq from './img/whyus/moq.webp';
 import personalization from './img/whyus/personalization.webp';
 import quality from './img/whyus/quality.webp';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import Search from './components/Search';
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-
+  const [search, setSearch] = useState('');
+  const filteredProducts = products.filter((product) =>
+  product.name.toLowerCase().includes(search.toLowerCase()) ||
+  product.description.toLowerCase().includes(search.toLowerCase())
+);
   const productImages = [
     { src: eco, label: 'Eco Friendly' },
     { src: packaging, label: 'Premium Packaging' },
@@ -162,30 +167,46 @@ function updateQuantity(productId: string, quantity: number) {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-orange-50 via-white to-amber-50">
       {/* Header */}
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm shadow-sm z-30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center py-1">
-          <Logo />
-          <button
-            onClick={() => setIsCartOpen(true)}
-            className="relative bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
-          >
-            <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6" />
-            {totalItems > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                {totalItems}
-              </span>
-            )}
-          </button>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center gap-2">
+
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Logo />
+          </div>
+
+          {/* Search bar grows to fill remaining space */}
+          <div className="flex-1 min-w-[200px]">
+            <Search
+              value={search}
+              onChange={setSearch}
+              placeholder="Search products..."
+            />
+          </div>
+
+          {/* Cart button always right */}
+          <div className="flex-shrink-0">
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
+            >
+              <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6" />
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
+            </button>
+          </div>
+
         </div>
       </header>
-
       {/* Hero / Carousel */}
       {/* <section className="py-10 sm:py-14">
         {products.length > 0 && <ProductCarousel products={products} onAddToCart={addToCart} />}
       </section> */}
-
+  
       {/* Product List */}
-      <ProductList products={products} onAddToCart={addToCart} />
-
+      <ProductList products={filteredProducts} onAddToCart={addToCart} />
       {/* Cart Drawer */}
       <Cart
         items={cartItems}

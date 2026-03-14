@@ -8,7 +8,11 @@ interface ProductListProps {
 
 export default function ProductList({ products, onAddToCart }: ProductListProps) {
   if (products.length === 0) {
-    return null;
+    return (
+    <p className="text-center text-gray-500 py-10">
+      No products found
+    </p>
+  );
   }
 
   return (
