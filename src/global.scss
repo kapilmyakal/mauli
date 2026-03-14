@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Responsive spacing helpers */
+  @media (max-width: 640px) {
+    .container {
+      padding: 0 1rem;
+    }
+  }
+  
