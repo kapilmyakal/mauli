@@ -174,8 +174,8 @@ function updateQuantity(productId: string, quantity: number) {
             <Logo />
           </div>
 
-          {/* Search bar grows to fill remaining space */}
-          <div className="flex-1 min-w-[200px]">
+          {/* Search bar with left margin */}
+          <div className="flex-1 min-w-[200px] ml-4">
             <Search
               value={search}
               onChange={setSearch}
@@ -183,8 +183,8 @@ function updateQuantity(productId: string, quantity: number) {
             />
           </div>
 
-          {/* Cart button always right */}
-          <div className="flex-shrink-0">
+          {/* Cart button */}
+          <div className="flex-shrink-0 ml-4">
             <button
               onClick={() => setIsCartOpen(true)}
               className="relative bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
