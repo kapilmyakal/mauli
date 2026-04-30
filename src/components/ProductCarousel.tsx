@@ -48,7 +48,7 @@ export default function ProductCarousel({ products, onAddToCart }: ProductCarous
           <img
             src={currentProduct?.image_url}
             alt={currentProduct?.name}
-            className="w-full h-full object-contain p-8"
+            className="w-full h-full object-contain"
           />
 
           <button
@@ -83,7 +83,7 @@ export default function ProductCarousel({ products, onAddToCart }: ProductCarous
           </div>
         </div>
 
-        <div className="p-6 md:p-8">
+        {/* <div className="p-6 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
@@ -94,9 +94,7 @@ export default function ProductCarousel({ products, onAddToCart }: ProductCarous
                 <span className="text-3xl md:text-4xl font-bold text-orange-600">
                   ₹{currentProduct?.price}
                 </span>
-                {/* <span className="text-sm text-gray-500">
-                  {currentProduct?.stock > 0 ? `${currentProduct?.stock} in stock` : 'Out of stock'}
-                </span> */}
+               
               </div>
             </div>
 
@@ -109,7 +107,7 @@ export default function ProductCarousel({ products, onAddToCart }: ProductCarous
               Add to Cart
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

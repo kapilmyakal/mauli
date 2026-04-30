@@ -3,7 +3,7 @@ import { ShoppingCart } from 'lucide-react';
 import { Product } from './lib/supabase';
 import HorizontalImageList from './components/HorizontalImageList';
 import Logo from './components/Logo';
-// import ProductCarousel from './components/ProductCarousel';
+import ProductCarousel from './components/ProductCarousel';
 import ProductList from './components/ProductList';
 import Cart, { CartItem } from './components/Cart';
 import { sendOrderToWhatsApp } from './utils/whatsapp';
@@ -41,6 +41,9 @@ import A26 from './img/A26.jpeg';
 import A27 from './img/A27.jpeg';
 import A28 from './img/A28.jpeg';
 
+//cover pic
+
+import C1 from './img/cov-1.jpeg'
 import eco from './img/whyus/eco.webp';
 import packaging from './img/whyus/packaging.webp';
 import shipping from './img/whyus/shipping.webp';
@@ -52,6 +55,7 @@ import Search from './components/Search';
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [cover, setCover] = useState<Product[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -106,7 +110,9 @@ function App() {
         { id: 'A28', name: 'A28', price: 400, image_url: A28, description: 'Napkin Quantity: 9 | Size: 10″ × 10″', stock: 1000 },
 
       ];
+      let items = [ { id: 'C1', name: 'C1', price: 0, image_url: C1, description: '', stock: 1000 },]
       setProducts(data);
+      setCover(items);
     } catch (error) {
       console.error('Error fetching products:', error);
     } finally {
@@ -201,9 +207,9 @@ function updateQuantity(productId: string, quantity: number) {
         </div>
       </header>
       {/* Hero / Carousel */}
-      {/* <section className="py-10 sm:py-14">
-        {products.length > 0 && <ProductCarousel products={products} onAddToCart={addToCart} />}
-      </section> */}
+      <section className="py-10 sm:py-14">
+        {products.length > 0 && <ProductCarousel products={cover} onAddToCart={addToCart} />}
+      </section>
   
       {/* Product List */}
       <ProductList products={filteredProducts} onAddToCart={addToCart} />
